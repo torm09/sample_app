@@ -9,7 +9,7 @@ body {
 }
 
 section {
-	overflow: auto;	
+	overflow: auto;
 }
 
 textarea {
@@ -18,7 +18,7 @@ textarea {
 
 .center {
 	text-align: center;
-	
+
 	h1 {
 	margin-bottom: 10px;
 	}
@@ -74,9 +74,9 @@ footer {
 	color: #999
 	a {
 		color: #555;
-		&:hover {
+	}
+	a:hover {
 		color: #222;
-		}
 	}
 	small {
 		float: left;
@@ -91,5 +91,3 @@ footer {
 		}
 	}
 }
-
-footer ul 
