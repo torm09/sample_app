@@ -79,18 +79,17 @@ describe User do
   end
 
   describe "return value of autenticate method" do
-  	before { @user.save }
-  	let(:found_user) { User.find_by_email(@user.email) }
+	let(:josh) { User.create(email: 'josh@josh.com', password: 'password', password_confirmation: 'password', name: 'Joshua Toyota') }
+  	let(:found_user) { User.find_by(email: josh.email) }
 
   	describe "with valid password" do
-  		it { should == found_user.authenticate(@user.password) }
+		subject { found_user.authenticate('password') }
+  		it { should == found_user }
   	end
 
   	describe "with invalid password" do
-  		let(:user_for_invalid_password) { found_user.authenticate("invalid") }
-
-  		it { should_not == user_for_invalid_password }
-  		specify { user_for_invalid_password.should be_false }
+		subject { found_user.authenticate('invalid') }
+		it { should be_false }
   	end
 
   end
